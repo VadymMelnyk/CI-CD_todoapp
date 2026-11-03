@@ -21,8 +21,8 @@ on:
         type: choice
         description: 'Python version to run the tests on'
         options:
-          - 3.8
-          - 3.9
+          - 3.10
+          - 3.12
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -35,7 +35,7 @@ jobs:
   python-ci:
     strategy:
       matrix:
-        PythonVersion: [3.8, 3.9]
+        PythonVersion: [3.10, 3.12]
         OsType: [ubuntu-latest, windows-latest]
 
     runs-on: ${{ matrix.OsType }}
