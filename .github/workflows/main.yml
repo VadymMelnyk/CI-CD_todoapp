@@ -21,7 +21,7 @@ on:
         type: choice
         description: 'Python version to run the tests on'
         options:
-          - 3.10
+          - 3.11
           - 3.12
 
 concurrency:
@@ -35,7 +35,7 @@ jobs:
   python-ci:
     strategy:
       matrix:
-        PythonVersion: [3.10, 3.12]
+        PythonVersion: [3.11, 3.12]
         OsType: [ubuntu-latest, windows-latest]
 
     runs-on: ${{ matrix.OsType }}
